@@ -28,7 +28,7 @@ class Mascotas(models.Model):
     NombreMascota = models.Charfield(max_length=20, required= True, primary_key=True)
     RazaPredominante = models.Charfield(max_length=15, required= True)
     Descripcion = models.TextField(required= True)
-    Estado = models.Charfield(max_length=30, required= True)
+    Estado = models.Charfield(max_length=15, required= True)
 
 
 
