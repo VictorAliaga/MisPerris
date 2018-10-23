@@ -1,0 +1,31 @@
+.contenedor-formulario
+{
+    width: 98%;
+    margin: auto;
+    font-family: monospace;
+    font-size: 25px;
+    padding: 30px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: center;
+    border: 10px solid #1EED74;
+    border-radius: 20px;
+    
+}
+
+#contenedor-form
+{
+    margin: 5px;
+    padding: 5px;
+    width: 100%;
+}
+
+#register
+{
+    font-size: 20px;
+    background: #2D8C22;
+    color: #fff;
+    padding: 8px;
+    border-radius: 10px;
+
+}

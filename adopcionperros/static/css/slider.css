@@ -1,0 +1,84 @@
+/* Contenedor donde esta ubicado el slider*/
+#contenedor-slider
+{
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    /* Escondemos las 3 imagenes que sobran del carrusel*/
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+/* CARRUSEL */
+
+#slider
+{
+    /* Usamos prefijos para que se adapte en caso de que el usuario
+       ocupe otros navegadores */
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    
+    /* Le damos un ancho de 400% ya que tenemos 4 imagenes */
+    
+    width: 400%;
+    
+}
+
+/* Imagenes del carrusel */
+
+#slider img
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Botones del Carrusel*/
+
+#boton-anterior, #boton-siguiente
+{
+    width: 48px;
+    height: 48px;
+    background: #65FAA2;
+    position: absolute;
+    top: 40%;
+    /*Posicionamos los botones al medio del carrusel*/
+    transform: translateY(-50%);
+    line-height: 48px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    /* cuando el puntero del mouse este encima de los botones aparecera la manito para
+       hacer click*/
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Boton de la izquierda lo posicionamos */
+
+#boton-anterior
+{
+    left: 15px;
+}
+
+/* Boton de la derecha lo posicionamos */
+
+#boton-siguiente
+{
+    right: 15px;
+}
+
+/* Cuando pasamos el mouse por los botones del carrusel*/
+
+#boton-anterior, #boton-siguiente:hover
+{
+    background: #279153;
+}
+
+
+
