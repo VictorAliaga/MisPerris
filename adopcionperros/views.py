@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+# Crea tus vistas aqui.
+
+def index(request):
+    return render(request, 'adopcionperros/index.html', {})
+
