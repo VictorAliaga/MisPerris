@@ -71,14 +71,14 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis odio at nunc consequat feugiat. Phasellus bibendum ligula quis enim elementum, nec tincidunt ex bibendum. Praesent a rhoncus nisl, nec porttitor libero. Aliquam eleifend at libero sit amet ultricies. Quisque odio nisi, aliquam vel aliquam non, fermentum vitae mi. Aenean interdum augue ac consequat vestibulum. Morbi in aliquet nulla, in finibus nisi. Proin faucibus sollicitudin ante, dictum lobortis leo. Maecenas elementum diam a sem venenatis, nec mattis dolor luctus.
             </p>
         </section>
-        <!---   SECCION ULTIMOS PERRITOS ADOPTADOS   -->
+        <!---   SECCION ULTIMOS PERRITOS ADOPTADOS / MASCOTAS PUBLICADAS  -->
         <section id="perritos">
-            <h2> Ultimos Perritos Adoptados</h2>
+            <h2> Ultimos Perritos </h2>
             <div class="contenedor">
                 {% for mascotas in mascotapublicada %}
                 <article>
                 <h1><a href="">{{ mascotas.NombreMascota }}</a></h1>
-                <img src="{{ mascotas.Imagen.url }}" height="200" width="200" border="1"/>
+                <img src="{{ mascotas.Imagen.url }}">
                 <p>{{ mascotas.Descripcion|linebreaksbr }}</p>
                 </article>
                 {% endfor %}

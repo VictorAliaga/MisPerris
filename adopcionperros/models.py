@@ -25,7 +25,7 @@ class Adoptador(models.Model):
 # Clase Mascotas
 
 class Mascotas(models.Model):
-    Imagen = models.ImageField(upload_to='adopcionperros/static/upload')
+    Imagen = models.ImageField(upload_to='upload')
     NombreMascota = models.CharField(max_length=20,primary_key=True)
     RazaPredominante = models.CharField(max_length=15)
     Descripcion = models.TextField()
