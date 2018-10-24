@@ -24,8 +24,6 @@
 
             <nav class="menu">
                 <a href="index.html">Inicio</a>
-                <a href="mascotas.html">Mascotas</a>
-                <a href="registrar.html">Registrar</a>
             </nav>
         </div>
     </header>
@@ -77,15 +75,13 @@
         <section id="perritos">
             <h2> Ultimos Perritos Adoptados</h2>
             <div class="contenedor">
+                {% for mascotas in mascotapublicada %}
                 <article>
-                    <img src="{% static 'images/perrito1.png' %}">
-                    <h4>carena</h4>
+                <h1><a href="">{{ mascotas.NombreMascota }}</a></h1>
+                <img src="{{ mascotas.Imagen.url }}" height="200" width="200" border="1"/>
+                <p>{{ mascotas.Descripcion|linebreaksbr }}</p>
                 </article>
-                <!---->
-                <article>
-                    <img src="{% static 'images/perrito2.png' %}">
-                    <h4>don felipez</h4>
-                </article>
+                {% endfor %}
             </div>
         </section>
     </main>
