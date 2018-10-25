@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 # REEMPLAZE post_list por index ... !!!
 urlpatterns = [
     path('', views.index, name='index'),
+    path('registro/', views.register_view, name='vista_registro'),
     # url para las imagenes que suben de los perritos
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 from django.utils import timezone
 
 # Clase Adoptadores
@@ -6,12 +7,10 @@ from django.utils import timezone
 class Adoptador(models.Model):
     NombreUsuario = models.CharField(max_length=20, primary_key=True)
     ApellidoPaterno = models.CharField(max_length=15)
-    ApellidoMaterno = models.CharField(max_length=15)
-    NombreCompleto = models.CharField(max_length=30)
-    Correo = models.EmailField(max_length=50)
+    Nombres = models.CharField(max_length=20)
+    CorreoElectronico = models.EmailField(max_length=50)
     Contraseña = models.CharField(max_length=15)
     ConfirmarContraseña = models.CharField(max_length=15)
-    FechaRegistro = models.DateTimeField( default = timezone.now )
 
     # Metodo para Confirmar la Contraseña con la Confirmar Contraseña para crear el Usuario Adoptador
     def confirmar_usuario(self):
@@ -26,7 +25,7 @@ class Adoptador(models.Model):
 
 class Mascotas(models.Model):
     Imagen = models.ImageField(upload_to='upload')
-    NombreMascota = models.CharField(max_length=20,primary_key=True)
+    NombreMascota = models.CharField(max_length=20, primary_key=True)
     RazaPredominante = models.CharField(max_length=15)
     Descripcion = models.TextField()
     Estado = (('R','Rescatado'), ('D','Disponible'), ('A','Adoptado'))
@@ -51,7 +50,7 @@ class AdopcionMascota(models.Model):
     # Retornamos el Nombre de Usuario del Adoptador con la Mascota Adoptada
     def __str__(self):
         cadena = "{0} Ha Adoptado a {1}"
-        return cadena.format(self.Adoptador.NombreUsuario, self.Mascotas.NombreMascota)
+        return cadena.format(self.NombreUsuario, self.Mascotas.NombreMascota)
 
 
 
