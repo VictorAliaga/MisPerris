@@ -5,8 +5,9 @@ from django.utils import timezone
 from .models import Mascotas
 from .forms import ContactForm, LoginForm, RegisterForm
 from django.contrib.auth.models import User
-from django.contrib.auth import login,logout,authenticate
 
+from django.contrib.auth import login,logout,authenticate
+from django.http import HttpResponseRedirect
 
 # Crea tus vistas aqui.
 
@@ -36,8 +37,6 @@ def register_view(request):
         else:
             ctx = {'form':form}
             return render(request,'adopcionperros/registro.html',ctx)
-
-
     ctx = {'form':form}
     return render(request,'adopcionperros/registro.html',ctx)    
 

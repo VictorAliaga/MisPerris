@@ -2,9 +2,9 @@
 {% block content %}
     {% for mascotas in mascotapublicada %}
         <article>
-            <h1><a href="">{{ mascotas.NombreMascota }}</a></h1>
+            <h2><a href="">{{ mascotas.NombreMascota }}</a></h2>
                 <img src="{{ mascotas.Imagen.url }}">
-            <p>{{ mascotas.Descripcion|linebreaksbr }}</p>
+            <h4>{{ mascotas.Descripcion|linebreaksbr }}</h4>
         </article>
     {% endfor %}
 {% endblock %}           
