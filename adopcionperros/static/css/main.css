@@ -3,8 +3,8 @@
 @import url(banner.css);
 @import url(perritos.css);
 @import url(slider.css);
-@import url(galeria.css);
 @import url(registrar.css);
+@import url(registrocompleto.css);
 
 *
 {
@@ -55,7 +55,6 @@ header .contenedor
 }
 
 /* Seccion en General */
-
 section
 {
     width: 100%;

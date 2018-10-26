@@ -1,9 +1,29 @@
 {% extends 'adopcionperros/base_formulario.html' %}
 {% block title %} Registro {% endblock %}
     {% block content %}
-        <form action="." method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button class="btn btn-primary" type="submit">Registar</button>
-        </form>
+    <h2>REGISTRATE</h2>
+        <div class="formulario">
+            <form action="." method="POST">
+                    {% csrf_token %}
+                    <p><label for="id_username">Nombre de Usuario:</label> 
+                    <input type="text" name="username" required="" id="id_username"></p>
+        
+                    <p><label for="id_lastname">Apellido Paterno:</label> 
+                    <input type="text" name="lastname" required="" id="id_lastname"></p>
+        
+                    <p><label for="id_firstname">Nombre:</label>
+                    <input type="text" name="firstname" required="" id="id_firstname"></p>
+        
+                    <p><label for="id_email">Correo Electronico:</label>
+                    <input type="text" name="email" required="" id="id_email"></p>
+        
+                    <p><label for="id_password_one">Contraseña:</label>
+                    <input type="password" name="password_one" required="" id="id_password_one"></p>
+        
+                    <p><label for="id_password_two">Confirmar Contraseña:</label>
+                    <input type="password" name="password_two" required="" id="id_password_two"></p>
+                    
+                    <button class="btn btn-primary" type="submit">Registrarse</button>
+            </form>
+        </div>
 {% endblock %}   
