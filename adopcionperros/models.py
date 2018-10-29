@@ -4,13 +4,22 @@ from django.utils import timezone
 
 # Clase Mascotas
 class Mascotas(models.Model):
+
+    # Inicializamos los atributos
+    DISPONIBLE = 'Disponible'
+    RESCATADO = 'Rescatado'
+    ADOPTADO = 'Adoptado'
+
+    # Definimos las Opciones
+    STATE_CHOICES = ((DISPONIBLE, 'Disponible'),(RESCATADO, 'Rescatado'),(ADOPTADO, 'Adoptado'))
+
     Imagen = models.ImageField(upload_to='upload')
     NombreMascota = models.CharField(max_length=20)
     RazaPredominante = models.CharField(max_length=15)
     Descripcion = models.TextField()
-    Estado = (('R','Rescatado'), ('D','Disponible'), ('A','Adoptado'))
-    ESTADO = models.CharField(max_length=1, choices=Estado, default='R')
+    Estado = models.CharField(max_length=10, choices=STATE_CHOICES, default=DISPONIBLE)
     FechaPublicado = models.DateTimeField(blank=True, null=True)
+    
 
     # Retornamos el nombre de la mascota
     def __str__(self):

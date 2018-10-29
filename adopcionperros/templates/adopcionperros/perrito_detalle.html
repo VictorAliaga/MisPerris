@@ -1,10 +1,10 @@
 {% extends 'adopcionperros/base_formulario.html' %}
 {% block content %}
         <article>
-            <h2><a href="" style="text-decoration: none;">{{ mascotas.NombreMascota }}</a></h2>
-                <img src="{{ mascotas.Imagen.url }}">
-                <h2>Estado:</h2><h4>{{ mascotas.ESTADO }}</h4>
-            <p>{{ mascotas.Descripcion|linebreaksbr }}</p>
+            <h2><a href="" style="text-decoration: none;">{{ mascotas.NombreMascota }}</a></h2><br>
+                <img src="{{ mascotas.Imagen.url }}"><br>
+                <h2>Estado:</h2><h4>{{ mascotas.Estado }}</h4><br>
+            <p>{{ mascotas.Descripcion|linebreaksbr }}</p><br>
             {% if user.is_authenticated %}
             <button class="adoptar" type="button">ADOPTAME</button>
             {% endif %}

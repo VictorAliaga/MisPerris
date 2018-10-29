@@ -2,10 +2,9 @@
 {% block content %}
     {% for mascotas in mascota %}
         <article>
-            <h2><a href="/perrito/{{ mascotas.pk }}/" style="text-decoration: none;">{{ mascotas.NombreMascota }}</a></h2>
-                <img src="{{ mascotas.Imagen.url }}">
-                <h2>Estado:</h2><h4>{{ mascotas.ESTADO }}</h4>
-            <p>{{ mascotas.Descripcion|linebreaksbr }}</p>
+            <h2><a href="/perrito/{{ mascotas.pk }}/" style="text-decoration: none;">{{ mascotas.NombreMascota }}</a></h2><br>
+                <img src="{{ mascotas.Imagen.url }}"><br>
+                <h2>Estado:</h2><h4>{{ mascotas.Estado }}</h4><br>
         </article>
     {% endfor %}
 {% endblock %}
