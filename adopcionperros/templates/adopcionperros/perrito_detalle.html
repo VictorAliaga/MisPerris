@@ -1,0 +1,9 @@
+{% extends 'adopcionperros/base_formulario.html' %}
+{% block content %}
+        <article>
+            <h2><a href="" style="text-decoration: none;">{{ mascotas.NombreMascota }}</a></h2>
+                <img src="{{ mascotas.Imagen.url }}">
+                <h2>Estado:</h2><h4>{{ mascotas.ESTADO }}</h4>
+            <p>{{ mascotas.Descripcion|linebreaksbr }}</p>
+        </article>
+{% endblock %}

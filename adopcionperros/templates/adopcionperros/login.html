@@ -1,0 +1,10 @@
+{% extends 'adopcionperros/base_formulario.html' %}
+{% block title %} Login {% endblock %}
+{% block content %}
+<form action="." method="POST">
+    {% csrf_token %}
+    {{ mensaje }}
+    {{ form.as_p }}
+    <input type="submit" value="Login">
+</form>
+{% endblock %}
