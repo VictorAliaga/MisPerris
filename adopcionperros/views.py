@@ -73,7 +73,7 @@ def logout_view(request):
 # Vista de la lista de mascotas /mascotas/ donde estan todas las mascotas de la pagina
 # Nota: se adapto el codigo a la version actual de django
 def mascotas_view(request):
-    masco = Mascotas.objects.filter(FechaPublicado__lte=timezone.now()).order_by('FechaPublicado')
+    masco = Mascotas.objects.filter(Estado="Disponible")
     ctx = {'mascota': masco}
     return render(request,'adopcionperros/mascotas.html',ctx)
 
