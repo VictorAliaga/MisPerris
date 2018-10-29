@@ -1,10 +1,19 @@
 {% extends 'adopcionperros/base_formulario.html' %}
 {% block title %} Login {% endblock %}
 {% block content %}
-<form action="." method="POST">
-    {% csrf_token %}
-    {{ mensaje }}
-    {{ form.as_p }}
-    <input type="submit" value="Login">
-</form>
+<h2>INGRESA CON TU CUENTA</h2>
+<div class="login">
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{ mensaje }}
+        <p><label for="id_username">Username:</label> 
+            <input type="text" name="username" required="" id="id_username">
+        </p>
+    
+        <p><label for="id_password">Password:</label> 
+            <input type="password" name="password" required="" id="id_password">
+        </p>
+        <button class="btnlogin" type="submit" value="Login">Login</button>
+    </form>
+</div>
 {% endblock %}

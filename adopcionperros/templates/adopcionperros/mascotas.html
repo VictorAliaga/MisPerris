@@ -1,6 +1,5 @@
 {% extends 'adopcionperros/base.html' %}
 {% block content %}
-<h2> Nuestros Perritos </h2>
     {% for mascotas in mascota %}
         <article>
             <h2><a href="/perrito/{{ mascotas.pk }}/" style="text-decoration: none;">{{ mascotas.NombreMascota }}</a></h2>

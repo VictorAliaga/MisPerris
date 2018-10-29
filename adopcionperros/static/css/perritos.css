@@ -1,4 +1,3 @@
-
 /* Contenedor de la Seccion Perritos */ 
 #perritos .contenedor
 {
@@ -17,7 +16,7 @@
     box-sizing: border-box;
     justify-content: center;
     border: 4px solid;
-    border-color: #12511D;
+    border-color: blue;
 }
 
 /*Imagenes que estan en la seccion perritos */
