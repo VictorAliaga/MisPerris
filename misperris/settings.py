@@ -25,7 +25,7 @@ SECRET_KEY = 'l$r-d!i*^nzp*qjdv)=8dtgrz5bwehcd#z53+(!k1*ma_uzlwv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', ' . pythonanywhere.com', 'valipove.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', ' . pythonanywhere.com', 'victpove.pythonanywhere.com']
 
 
 # Application definition
