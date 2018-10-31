@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Mascotas
+from .models import Mascotas, AdoptarMascota
 from .forms import ContactForm, LoginForm, RegisterForm
 from django.contrib.auth.models import User
 
@@ -70,6 +70,9 @@ def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/')
 
+def adopcion_completa_view(request):
+    return render(request, 'adopcionperros/adopcion_completa.html')
+
 # Vista de la lista de mascotas /mascotas/ donde estan todas las mascotas de la pagina
 # Nota: se adapto el codigo a la version actual de django
 def mascotas_view(request):
@@ -80,8 +83,16 @@ def mascotas_view(request):
 # Vista en detalle de mascotas /perrito/ 
 # Nota: se adapto el codigo a la version actual de django    
 
-def perrito_detalle_view(request,pk):
-    perri = Mascotas.objects.get(pk=pk)
-    ctx = {'mascotas': perri}
-    return render(request,'adopcionperros/perrito_detalle.html',ctx)     
+def perrito_detalle_view(request, pk):
+    perris = get_object_or_404(Mascotas, pk=pk) 
 
+    if (request.method == "POST"):
+        Adoptador = request.user
+        AdoptarMascota.objects.create(Adoptador=Adoptador, MascotaAdoptada=perris.NombreMascota)
+        perris.update()
+
+        return render(request, 'adopcionperros/adopcion_completa.html')
+
+    else:
+        ctx = {'mascotas':perris}
+        return render(request,'adopcionperros/perrito_detalle.html',ctx)

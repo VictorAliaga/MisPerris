@@ -14,7 +14,8 @@ urlpatterns = [
     path('logout/', views.logout_view, name='vista_logout'),
     path('mascotas/', views.mascotas_view, name='vista_mascotas'),
     path('perrito/<int:pk>/', views.perrito_detalle_view, name='vista_perrito_detalle'),
-     path('accounts/login/', views.login_view, name ='vista_login'),
+    path('accounts/login/', views.login_view, name ='vista_login'),
+    path('adopcion/completado/', views.adopcion_completa_view, name='vista_adopcion_completa'),
 
     #Urls Recuperacion de Contraseña
     path('reset/password/', PasswordResetView.as_view(), name='reset_password'),

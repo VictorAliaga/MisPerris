@@ -20,12 +20,38 @@ class Mascotas(models.Model):
     Estado = models.CharField(max_length=10, choices=STATE_CHOICES, default=DISPONIBLE)
     FechaPublicado = models.DateTimeField(blank=True, null=True)
     
-
-    # Retornamos el nombre de la mascota
-    def __str__(self):
-        return self.NombreMascota
-
     # Comprobamos que la fecha de publicado sea la actual
     def mascota_publicada(self):
         self.FechaPublicado = timezone.now()
         self.save()
+
+    def update(self):
+        self.Estado = "Adoptado"
+        self.save()     
+        
+    # Retornamos el nombre de la mascota
+    def __str__(self):
+        return self.NombreMascota       
+
+# Clase AdoptarMascota
+
+class AdoptarMascota(models.Model):
+
+    Adoptador = models.CharField(max_length=45)
+    MascotaAdoptada = models.CharField(max_length=20)
+
+    # Guardamos la Adopcion
+    def mascota_adoptada(self):
+        self.save()
+
+    # Enlazamos el Nombre del adoptador con el nombre de la mascota para darle un buen toque
+
+    def __str__(self):
+        cadena = "El Usuario {0} ha adopta a la Mascota {1}"
+        return cadena.format(self.Adoptador, self.MascotaAdoptada)    
+ 
+
+        
+
+        
+
