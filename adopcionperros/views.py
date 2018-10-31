@@ -12,12 +12,13 @@ from django.http import HttpResponseRedirect
 # Crea tus vistas aqui.
 
 # Vista Principal Index.html
+
 def index(request):
     mascotapublicada = Mascotas.objects.filter(FechaPublicado__lte=timezone.now()).order_by('FechaPublicado')
     return render(request, 'adopcionperros/index.html', {'mascotapublicada': mascotapublicada})    
 
 # Vista de registro /registro/ donde va el formulario de registro de usuario
-# Nota: se adapto el codigo a la version actual de django
+
 def register_view(request):
     form = RegisterForm()
     if request.method == "POST":
@@ -41,7 +42,6 @@ def register_view(request):
     return render(request,'adopcionperros/registro.html',ctx)
 
 # Vista de log in /login/ donde va el formulario de log in de usuario
-# Nota: se adapto el codigo a la version actual de django    
 
 def login_view(request):
     mensaje =""
@@ -64,7 +64,6 @@ def login_view(request):
             return render(request,'adopcionperros/login.html',ctx)
 
 # Vista de logout /logout/ donde va el formulario de logout de usuario
-# Nota: se adapto el codigo a la version actual de django             
 
 def logout_view(request):
     logout(request)
@@ -74,15 +73,14 @@ def adopcion_completa_view(request):
     return render(request, 'adopcionperros/adopcion_completa.html')
 
 # Vista de la lista de mascotas /mascotas/ donde estan todas las mascotas de la pagina
-# Nota: se adapto el codigo a la version actual de django
+
 def mascotas_view(request):
     masco = Mascotas.objects.filter(Estado="Disponible")
     ctx = {'mascota': masco}
     return render(request,'adopcionperros/mascotas.html',ctx)
 
 # Vista en detalle de mascotas /perrito/ 
-# Nota: se adapto el codigo a la version actual de django    
-
+   
 def perrito_detalle_view(request, pk):
     perris = get_object_or_404(Mascotas, pk=pk) 
 

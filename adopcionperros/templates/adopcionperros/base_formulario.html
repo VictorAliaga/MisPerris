@@ -1,27 +1,26 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Aqui van los Metadatos (Datos que no se muestran en Pantalla)-->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1,minimum=scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="MisPerris Pagina Oficial de Adopcion de Perritos">
-    <title>Inicio | MisPerris</title>
+    <title>MisPerris</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/fontello.css' %}">
     <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
-    <!--- Vinculamos JQUERY -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 </head>
 <body>
-<!--- HEADER - HEADER - HEADER - HEADER - HEADER - HEADER -->
     <header>
         <div class="contenedor">
             <h1>MisPerris</h1>
             <input type="checkbox" id="menu-bar">
             <label class="icon-menu" for="menu-bar"></label>
-
             <nav class="menu">
                 <a href="{% url 'index' %}">Inicio</a>
                 <a href="/mascotas/">Mascotas</a>
@@ -40,32 +39,32 @@
             </nav>
         </div>
     </header>
-<!--- MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN - MAIN -->
+
     <main>
-        <!--   CONTENEDOR BANNER/CARRUSEL -->
+       
         <div id="contenedor-slider">
-            <!--- SLIDER/ CARRUSEL -->
+           
             <div id="slider">
                     
                 <section>    
                     
-                    <img src="{% static 'images/carru1.png' %}" alt="">
+                    <img src="{% static 'images/carru1.png' %}" alt="Carrusel 1">
                         
                 </section>
                 
                 <section>                
                     
-                    <img src="{% static 'images/carru2.png' %}" alt="">
+                    <img src="{% static 'images/carru2.png' %}" alt="Carrusel 2">
                     
                 </section>
                 
                 <section>
                        
-                    <img src="{% static 'images/carru3.png' %}" alt="">
+                    <img src="{% static 'images/carru3.png' %}" alt="Carrusel 3">
     
                 <section>
                     
-                    <img src="{% static 'images/carru4.png' %}" alt="">
+                    <img src="{% static 'images/carru4.png' %}" alt="Carrusel 4">
                     
                 </section>
                 
@@ -73,7 +72,7 @@
                 <div id="boton-anterior">&#60;</div>
                 <div id="boton-siguiente">&#62;</div>
         </div>
-        <!---   SECCION FORMULARIO DE REGISTRO   -->
+        
        
             <section id="RegistroFormulario">
                 {% block content %}
@@ -81,7 +80,7 @@
             </section>
        
     </main>
-<!--- FOOTER - FOOTER - FOOTER - FOOTER - FOOTER - FOOTER - FOOTER -->
+
     <footer>
         <div class="contenedor">
             <p class="copyright">MisPerris &copy; 2018</p>
@@ -92,7 +91,8 @@
             </div>
         </div>
     </footer>
-    <!--- VINCULAMOS EL ARCHIVO JS AL FINAL -->
+    
     <script src="{% static 'js/slider.js' %}"></script>
+    
 </body>    
 </html>
